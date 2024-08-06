@@ -32,8 +32,8 @@ The memory feature stores the last four user and assistant messages in the sessi
 
 1. **Clone the repository:**
     ```bash
-    git clone https://github.com/yourusername/instruction-tuned-express-chatbot.git
-    cd instruction-tuned-express-chatbot
+    git clone https://github.com/muskonur/ecommerce-chatbot
+    cd ecommerce-chatbot
     ```
 
 2. **Install the dependencies:**
