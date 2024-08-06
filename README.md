@@ -1,6 +1,6 @@
 # Instruction-Tuned OpenAI Chatbot
 
-![Instruction-Tuned OpenAI Chatbot](https://www.aionisys.com/wp-content/uploads/2024/08/openai-express-banner.png)
+![Instruction-Tuned OpenAI Chatbot](https://www.aionisys.com/wp-content/uploads/2024/08/ecoomerce-chatbot-github.png)
 
 **Instruction-Tuned OpenAI Chatbot** is an OpenAI API-powered Express application that demonstrates how an instruction-tuned language model can be integrated with a site's data to perform specific tasks and provide meaningful responses. This project also features a memory system to retain conversation context, ensuring coherent and relevant interactions.
 
@@ -53,6 +53,14 @@ The memory feature stores the last four user and assistant messages in the sessi
     npm start
     ```
 
+## Usage
+
+Interact with the chatbot by sending POST requests to the `/chat` endpoint. Here is an example using `curl`:
+
+```bash
+curl -X POST http://localhost:3000/chat -H "Content-Type: application/json" -d '{"prompt": "What is my order status? 32423 is my order ID"}'
+```
+
 ## Example Tools
 
 Below are some examples of the tools defined in `toolsDefinition.js`:
@@ -67,16 +75,6 @@ Below are some examples of the tools defined in `toolsDefinition.js`:
 - **Parameters:** 
     - `orderId` (string): The ID of the order whose status you want to retrieve.
 
-### `retrieve_billing_address`
-
-- **Description:** Fetches the billing address for a given order.
-- **Example Usage:**
-    ```javascript
-    const functionResponse = await retrieve_billing_address(orderId);
-    ```
-- **Parameters:**
-    - `orderId` (string): The ID of the order for which you want to get the billing address.
-
 ### `get_product_stock`
 
 - **Description:** Checks the stock availability of a specific product.
@@ -87,7 +85,33 @@ Below are some examples of the tools defined in `toolsDefinition.js`:
 - **Parameters:**
     - `productId` (string): The ID of the product for which you want to check stock availability.
 
-These tools can be used as-is or customized to meet specific needs. They provide foundational functionality for managing e-commerce operations and can be integrated into your chatbot to enhance its capabilities.
+These tools can be used as-is or customized to meet specific needs. They provide foundational functionality for managing e-commerce operations and can be integrated into your chatbot to enhance its capabilities. In toolsDefinition.js, there are tasks prepared for the Instruction-Tuned method, that is, tools with carefully prepared prompts. The list of these is as follows.
+
+- Retrieve An Order Status
+- Retrieve An Order Create Date
+- Retrieve Order Refunds
+- Retrieve Billing Address
+- Retrieve Shipping Address
+- Retrieve An Order Items
+- Update Shipping Address
+- Update An Order Note
+- Describe Product Marketing Style
+- List All Payment Gateways
+- List All Shipping Zones
+- Get Product Stock
+- Get Shipping Company
+- Get Return Policy
+- Get Warranty Terms
+- Get Shipping Date
+- Get Refund Deposit Date
+- Get Customer Service Contact
+- Get Customer Service Email
+- Get Free Shipping Threshold
+- Retrieve Sales Report
+- Retrieve Top Sellers Report
+- Retrieve Coupons Totals
+- Retrieve Customers Totals
+- Retrieve Orders Totals
 
 ## Memory Management
 
@@ -98,15 +122,12 @@ The application maintains context by storing the last four user and assistant me
 if (messages.length > 8) {
     messages = messages.slice(-8);
 }
+```
+
+## License
+
+This project is licensed under the GNU General Public License (GPL) v3.0. See the [LICENSE](./LICENSE) file for details.
 
 ## Check Out Our WordPress Plugin
 
 Have you checked out our unique WordPress plugin, **Aion Assists - Customer Service**, designed specifically for WooCommerce stores? This plugin offers a wide range of features that streamline customer service operations, making it easier for store owners to manage and respond to customer inquiries efficiently. For more information and to explore its capabilities, visit the [Aion Assists Customer Service plugin page](https://wordpress.org/plugins/aion-assists/).
-
-## Usage
-
-Interact with the chatbot by sending POST requests to the `/chat` endpoint. Here is an example using `curl`:
-
-```bash
-curl -X POST http://localhost:3000/chat -H "Content-Type: application/json" -d '{"prompt": "What is my order status? 32423 is my order ID"}'
-
