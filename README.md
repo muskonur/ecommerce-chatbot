@@ -32,7 +32,7 @@ The memory feature stores the last four user and assistant messages in the sessi
 
 1. **Clone the repository:**
     ```bash
-    git clone https://github.com/muskonur/ecommerce-chatbot
+    git clone https://github.com/muskonur/ecommerce-chatbot.git
     cd ecommerce-chatbot
     ```
 
